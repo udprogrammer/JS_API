@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="myfun()">SHOW</button><br />
+    <img src="" id="dogimg" />
+  </body>
+  <script>
+    let img = document.getElementById("dogimg");
+    async function myfun() {
+      let data = await fetch("https://dog.ceo/api/breeds/image/random");
+      let data2 = await data.json();
+      img.src = data2.message;
+    }
+    myfun();
+  </script>
+</html>
